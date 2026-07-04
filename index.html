@@ -1,43 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Excel Cloud</title>
-
-    <!-- Handsontable (Excel-like grid) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.css">
+    <title>Excel Cloud - Login</title>
 
     <link rel="stylesheet" href="css/style.css">
 
+    <!-- Firebase Compat SDK -->
     <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.js"></script>
-
 </head>
 
 <body>
 
-<div id="topbar">
+<div class="login-box">
+    <h1>Excel Cloud</h1>
 
-    <h3>Excel Cloud</h3>
+    <input
+        type="email"
+        id="email"
+        placeholder="Email"
+        autocomplete="email">
 
-    <div>
-        <span id="userEmail"></span>
-        <button onclick="logout()">Logout</button>
-    </div>
+    <input
+        type="password"
+        id="password"
+        placeholder="Password"
+        autocomplete="current-password">
 
+    <button onclick="login()">
+        Login
+    </button>
+
+    <p id="message"></p>
 </div>
 
-<div id="spreadsheet"></div>
-
 <script src="js/firebase.js"></script>
-<script src="js/auth.js"></script>
-<script src="js/app.js"></script>
+
+<script>
+function login() {
+
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+    const message = document.getElementById("message");
+
+    message.innerHTML = "";
+
+    auth.signInWithEmailAndPassword(email, password)
+        .then(() => {
+            window.location.href = "index.html";
+        })
+        .catch((error) => {
+            message.innerHTML = error.message;
+            message.style.color = "red";
+        });
+}
+</script>
 
 </body>
-
 </html>
