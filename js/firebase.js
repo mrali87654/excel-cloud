@@ -1,15 +1,19 @@
-const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_PROJECT.firebaseapp.com",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_PROJECT.appspot.com",
-    messagingSenderId: "YOUR_SENDER_ID",
-    appId: "YOUR_APP_ID"
-};
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
 
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAhNjzfr2PnkeUCEAgPkB5HohpitNSlB78",
+    authDomain: "excel-cloud-f0fe2.firebaseapp.com",
+    projectId: "excel-cloud-f0fe2",
+    storageBucket: "excel-cloud-f0fe2.firebasestorage.app",
+    messagingSenderId: "905531285438",
+    appId: "1:905531285438:web:e79d37f2a91d5016e1e3ef"
+  };
 
-// Services
-const auth = firebase.auth();
-const db = firebase.firestore();
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+</script>
