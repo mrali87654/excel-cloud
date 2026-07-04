@@ -15,7 +15,7 @@ auth.onAuthStateChanged(async (user) => {
 
     document.getElementById("userEmail").innerText = user.email;
 
-    const isAdmin = user.email === "admin@gmail.com"; // CHANGE THIS
+    const isAdmin = user.email === "ali.h.mousa.1996@gmail.com"; // CHANGE THIS
 
     // load data from Firestore
     const doc = await db.collection("sheet").doc("main").get();
